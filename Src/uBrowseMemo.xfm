@@ -1,0 +1,144 @@
+object frmBrowseMemo: TfrmBrowseMemo
+  Left = 81
+  Top = 437
+  Width = 434
+  Height = 292
+  VertScrollBar.Range = 41
+  ActiveControl = Button1
+  Caption = 'Memo Field'
+  Color = clButton
+  Font.Color = clText
+  Font.Height = 11
+  Font.Name = 'MS Sans Serif'
+  Font.Pitch = fpVariable
+  Font.Style = []
+  Menu = MainMenu1
+  ParentFont = False
+  Position = poDefaultPosOnly
+  PixelsPerInch = 96
+  TextHeight = 18
+  TextWidth = 5
+  object Panel1: TPanel
+    Left = 0
+    Top = 226
+    Width = 434
+    Height = 41
+    Align = alBottom
+    BevelInner = bvLowered
+    TabOrder = 0
+    OnResize = Panel1Resize
+    object Button1: TButton
+      Left = 336
+      Top = 8
+      Width = 75
+      Height = 25
+      Anchors = [akTop, akRight]
+      Cancel = True
+      Caption = 'Close'
+      TabOrder = 0
+      OnClick = Button1Click
+    end
+    object cbWordWrap: TCheckBox
+      Left = 8
+      Top = 12
+      Width = 97
+      Height = 17
+      Caption = 'Word Wrap'
+      TabOrder = 1
+      OnClick = cbWordWrapClick
+    end
+  end
+  object Panel2: TPanel
+    Left = 0
+    Top = 0
+    Width = 434
+    Height = 226
+    Align = alClient
+    TabOrder = 1
+    object PageControl1: TPageControl
+      Left = 1
+      Top = 1
+      Width = 432
+      Height = 224
+      ActivePage = Tabsheet_AsText
+      Align = alClient
+      TabOrder = 0
+      object Tabsheet_AsText: TTabSheet
+        Caption = 'Text'
+        TabVisible = False
+        object MemoText: TDBMemo
+          Left = 0
+          Top = 0
+          Width = 424
+          Height = 194
+          Align = alClient
+          Font.CharSet = fcsLatin1
+          Font.Color = clText
+          Font.Height = 11
+          Font.Name = 'Courier New'
+          Font.Pitch = fpVariable
+          Font.Style = []
+          ParentFont = False
+          ScrollBars = ssBoth
+          TabOrder = 0
+          WordWrap = False
+        end
+      end
+      object Tabsheet_AsObject: TTabSheet
+        Caption = 'Object'
+        ImageIndex = 1
+        TabVisible = False
+        object MemoObject: TMemo
+          Left = 0
+          Top = 0
+          Width = 424
+          Height = 194
+          Align = alClient
+          ReadOnly = True
+          ScrollBars = ssVertical
+          TabOrder = 0
+          WordWrap = False
+        end
+      end
+    end
+  end
+  object MainMenu1: TMainMenu
+    Left = 93
+    Top = 41
+    object File1: TMenuItem
+      Caption = '&File'
+      object Print1: TMenuItem
+        Caption = '&Print'
+        OnClick = Print1Click
+      end
+      object PrintSetup1: TMenuItem
+        Caption = 'Print &Setup'
+        OnClick = PrintSetup1Click
+      end
+      object Exit1: TMenuItem
+        Caption = 'E&xit'
+        OnClick = Exit1Click
+      end
+    end
+    object Edit1: TMenuItem
+      Caption = '&Edit'
+      OnClick = Edit1Click
+      object Find1: TMenuItem
+        Caption = 'Find'
+        ShortCut = 16454
+        OnClick = Find1Click
+      end
+      object FindAgain1: TMenuItem
+        Caption = 'Find Again'
+        ShortCut = 114
+        OnClick = FindAgain1Click
+      end
+    end
+  end
+  object FindDialog1: TFindDialog
+    Options = [frDown, frHideWholeWord, frHideUpDown]
+    Title = 'Find'
+    Left = 256
+    Top = 8
+  end
+end
