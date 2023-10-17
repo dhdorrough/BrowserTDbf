@@ -1,10 +1,9 @@
+// Program was compiled with Delphi 7.0 (Build 8.1)
+// Program uses Turbo Power Orpheus library (available on SourceForge)
+// Program uses Turbo Power Systools library (available on SourceForge)
+// Program Uses TDbf (https://sourceforge.net/projects/tdbf/)
 program BrowserTDbf;
-
-{%File '..\..\..\LibSrc\Soundex.inc'}
-{%File '..\..\..\changes\Versions.txt'}
-
 uses
-  QForms,
   Forms,
   uBrowserTDbf in 'uBrowserTDbf.pas' {Form_Browser},
   uBrowseMemo in 'uBrowseMemo.pas' {frmBrowseMemo},
